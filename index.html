@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Countries</title>
+    <link rel="stylesheet" type="text/css" href="game.css" />
+    <!-- https://github.com/farzher/fuzzysort v2.0.4 -->
+    <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
+    <!-- <script src="fuzzysort.js"></script> -->
+
+    <script src="countries.js"></script>
+    <script src="game.js"></script>
+</head>
+
+<body>
+    <div id="menu">
+        <button id="newGame">New Game</button>
+        Language:
+        <select name="Language" id="language">
+            <option value="eng">English</option>
+            <option value="ger">German</option>
+        </select>
+    </div>
+    <div id="search">
+        <div id="bar"><input type="text" id="searchBar">
+            <div id="predictions"></div>
+        </div>
+    </div>
+    <div id="results"></div>
+    <div id="win" class="hidden"></div>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+:root {
+    --searchWidth--: 80vw;
+    font-size: xx-large;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    row-gap: 1em;
+    grid-template-areas:
+        "menu"
+        "search"
+        "results";
+}
+
+#menu {
+    grid-area: menu;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+}
+
+#newGame {
+    font-size: x-large;
+    margin: 10px;
+}
+
+#language {
+    font-size: x-large;
+}
+
+#search {
+    grid-area: search;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#results {
+    overflow-y: scroll;
+    grid-area: results;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-left: 1em;
+}
+
+#results>div {
+    display: grid;
+    grid-template-columns: 1fr 5em;
+}
+
+.pred {
+    height: auto;
+    border: solid;
+    border-width: 1px 0 0 0;
+    width: var(--searchWidth--);
+    padding: 5px 1em 5px 1em;
+    margin-left: -2px;
+}
+
+#bar {
+    border-radius: 1em;
+    overflow: hidden;
+    border: solid;
+    border-width: 3px;
+    padding: 0;
+    width: var(--searchWidth--);
+}
+
+#searchBar {
+    padding: 5px 1em 5px 1em;
+    width: var(--searchWidth--);
+    font-size: xx-large;
+    border-width: 1px;
+    margin-left: -2px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+    /* border-radius: 1em; */
+}
+
+#searchBar:focus {
+    outline: none !important;
+    border: 1px solid;
+}
+
+#win {
+    position: absolute;
+    width: 50vw;
+    left: 25vw;
+    height: 50vh;
+    top: 25vh;
+    background-color: lightblue;
+    box-shadow: 10px 10px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (orientation: landscape) {
+    :root {
+        --searchWidth--: 40vw;
+    }
+
+    body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "menu menu"
+            "search results";
+    }
+
+    #results {
+        padding-left: 3em;
+        justify-content: center;
+    }
+}
