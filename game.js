@@ -68,7 +68,7 @@ function load(dict) {
     gNames = [];
     fair = [];
     for (let code in locations) {
-        if (!locations[code].fair) {
+        if (locations[code].fair) {
             fair.push(code);
         }
         for (let name of locations[code].names) {
